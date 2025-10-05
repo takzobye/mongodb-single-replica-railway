@@ -1,6 +1,6 @@
 ...
 
-1. Create service from Github Repo
+1. Create service from `https://github.com/takzobye/mongodb-single-replica-railway`
 2. Attach volume
 3. Setting add TCP Proxy (27017)
 4. Set Environment Variables
@@ -15,8 +15,11 @@ MONGOPORT="27017"
 MONGOUSER="${{MONGO_INITDB_ROOT_USERNAME}}"
 ```
 5. Railway SSH
-6. Run `mongosh "mongodb://mongo:YOUR_PASSWORD@mongodb-single-replica-railway.railway.internal:27017"`
-7. Run initiate command
+6. Connect to MongoDB
+```
+mongosh "mongodb://mongo:YOUR_PASSWORD@mongodb-single-replica-railway.railway.internal:27017"
+```
+7. Run initiate replica set command
 ```
 rs.initiate({
   _id: "rs0",
@@ -25,5 +28,5 @@ rs.initiate({
   ]
 })
 ```
-8. `rs.status()`
+8. Check status with `rs.status()`
 9. Test in MongoDB Compass with params `?directConnection=true&retryWrites=false`
