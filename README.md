@@ -1,8 +1,9 @@
-Prerequisites:
+### Prerequisites:
 - Railway CLI (`brew install railway`)
 
 ---
 
+### How to use:
 1. Create service from `https://github.com/takzobye/mongodb-single-replica-railway`
 2. Attach volume
 3. Setting add TCP Proxy (27017)
