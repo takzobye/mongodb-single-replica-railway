@@ -1,5 +1,24 @@
 # MongoDB Single Replica Set on Railway
 
+If you want to use features like **Transactions** in MongoDB, you need to set up a **Replica Set**.
+This also requires a **Keyfile** for authentication between nodes.
+
+## Simple Steps in the Dockerfile
+
+1. **Create the Keyfile**
+   - Generate a random key.
+   - Save it into a file that MongoDB will use for internal authentication.
+
+2. **Set File Permissions**
+   - Change ownership of the Keyfile to the `mongodb` user.
+   - Restrict permissions so only MongoDB can access it.
+
+3. **Run Docker with Replica Set + Authentication**
+   - Start the MongoDB container with parameters to:
+     - Enable **Replica Set mode**.
+     - Enable **Authentication**.
+     - Use the **Keyfile** for node-to-node communication.
+
 ### Prerequisites:
 - Railway CLI (`brew install railway`)
 
