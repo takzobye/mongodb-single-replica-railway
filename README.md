@@ -1,4 +1,7 @@
-...
+Prerequisites:
+- Railway CLI (`brew install railway`)
+
+---
 
 1. Create service from `https://github.com/takzobye/mongodb-single-replica-railway`
 2. Attach volume
